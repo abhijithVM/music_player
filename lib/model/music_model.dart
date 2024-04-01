@@ -1,30 +1,4 @@
-class MusicModel {
-  int? resultCount;
-  List<Results>? results;
-
-  MusicModel({this.resultCount, this.results});
-
-  MusicModel.fromJson(Map<String, dynamic> json) {
-    resultCount = json['resultCount'];
-    if (json['results'] != null) {
-      results = <Results>[];
-      json['results'].forEach((v) {
-        results!.add(Results.fromJson(v));
-      });
-    }
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['resultCount'] = resultCount;
-    if (results != null) {
-      data['results'] = results!.map((v) => v.toJson()).toList();
-    }
-    return data;
-  }
-}
-
-class Results {
+class MusicListModel {
   String? wrapperType;
   String? kind;
   int? artistId;
@@ -60,7 +34,7 @@ class Results {
   String? primaryGenreName;
   bool? isStreamable;
 
-  Results(
+  MusicListModel(
       {this.wrapperType,
       this.kind,
       this.artistId,
@@ -96,7 +70,7 @@ class Results {
       this.primaryGenreName,
       this.isStreamable});
 
-  Results.fromJson(Map<String, dynamic> json) {
+  MusicListModel.fromJson(Map<String, dynamic> json) {
     wrapperType = json['wrapperType'];
     kind = json['kind'];
     artistId = json['artistId'];

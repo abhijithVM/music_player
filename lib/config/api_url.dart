@@ -1,2 +1,8 @@
-const String lookupID = "https://itunes.apple.com/lookup?id=";
-const String toofanID = "1576647026";
+
+
+
+class ApiUrl {
+
+   static String lookupID = "https://itunes.apple.com/lookup?id=";
+static String toofanID = "1576647026";
+}
